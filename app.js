@@ -10,3 +10,5 @@ setTimeout(down, 1000);
 function down () {
   player1.style.bottom = '5px'
 }
+
+//use the DOM to create more hurdles, a finite amount
