@@ -48,7 +48,45 @@ body {
   position: absolute;
   background-color: blue;
   right: 0%;
-  animation: move 5s linear infinite;
+  animation: move 5s linear;
+}
+
+#one{
+  animation-delay: 2s;
+}
+#two{
+  animation-delay: 5s;
+}
+#three{
+  animation-delay: 8s;
+}
+#four{
+animation-delay: 10s;
+
+}
+#five{
+animation-delay: 12s;
+
+}
+#six{
+animation-delay: 16s;
+
+}
+#seven{
+animation-delay: 20s;
+
+}
+#eight{
+animation-delay: 24s;
+
+}
+#nine{
+animation-delay: 30s;
+
+}
+#ten{
+animation-delay: 34s;
+
 }
 
 @keyframes move {
