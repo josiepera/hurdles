@@ -1,3 +1,26 @@
+/* Background from https://codepen.io/P1N2O/pen/pyBNzX?editors=1100 */
+
+body {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
 .game-box {
   height: 450px;
   width: 75%;
@@ -5,6 +28,8 @@
   position: relative;
   margin: 80px auto;
   left: 0;
+  background-image: url(https://orig00.deviantart.net/2ba3/f/2008/222/7/2/faded_olympic_logo_by_conradchaos.png);
+  background-size: cover;
 }
 .user {
   height: 75px;
@@ -13,7 +38,8 @@
   position: absolute;
   bottom: 5px;
   left: 80px;
-  transition-duration: 1s
+  transition-duration: 1s;
+  background-image: image(https://cdn.pixabay.com/photo/2017/01/31/20/58/begin-2027218__340.png);
 }
 .hurdle {
   height: 150px;
