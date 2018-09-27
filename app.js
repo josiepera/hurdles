@@ -26,17 +26,17 @@ let newHurdle = newDiv.classList.add('hurdle');
 
 document.querySelector('.game-box').appendChild(newDiv);
 
-// return newDiv;
+return newDiv;
 
 }
 
 
 setTimeout(hurdles, 2000);
 
-// for(i = 0; i < 5; i++) {
-//   hurdles();
-//
-// }
+for(i = 0; i < 5; i++) {
+  hurdles();
+
+}
 
 function collision() {
 
@@ -48,7 +48,7 @@ function collision() {
     // let hurdleH = hurdle.offsetHeight;
     // let hurdleX = hurdle.offsetLeft;
     // let hurdleY = hurdle.offsetTop;
-    // 
+    //
     // if ((player1.left + player1.width) > hurdle.left &&
     //     player1.left < (hurdle.left + hurdle.width) &&
     //     (player1.top + player1.height) > player1.height &&
