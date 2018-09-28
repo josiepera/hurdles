@@ -3,13 +3,22 @@
 let hurdle = document.querySelector('.hurdle')
 let player1 = document.querySelector('.user')
 
-// let player, hurdle, hurdleH, hurdleW, hurdleX, hurdleY, playerH, playerW, playerX, playerY;
 
+// player1.addEventListener('click', function() {
+//     player1.style.bottom = '250px';
+//
+// setTimeout(down, 1000);
+//
+// })
 
-player1.addEventListener('click', function() {
+document.addEventListener('keydown', function jump(event){
+  if(event.keyCode == 38) {
     player1.style.bottom = '250px';
+    //if (player1Right == hurdleLeft ) {
+    // alert('crash')
+setTimeout(down, 800);
+  }
 
-setTimeout(down, 1000);
 
 })
 
@@ -17,26 +26,14 @@ function down () {
   player1.style.bottom = '5px'
 }
 
-//use the DOM to create more hurdles, a finite amount
 
-// 
-// function hurdles(){
-// let newDiv = document.createElement('div');
-// let newHurdle = newDiv.classList.add('hurdle');
-//
-// document.querySelector('.game-box').appendChild(newDiv);
-//
-// return newDiv;
-//
-// }
-//
-//
-// setTimeout(hurdles, 2000);
-//
-// for(i = 0; i <= 5; i++) {
-//   hurdles();
-//
-// }
+function myFunction() {
+    var x = document.getElementById("myAudio").autoplay;
+    document.getElementById("demo").innerHTML = x;
+}
+
+
+
 
 // function collision() {
 //     // if ((player1.left + player1.width) > hurdle.left &&
@@ -52,9 +49,3 @@ function down () {
 //       }
 // }
 // collision()
-//
-//
-// // if (player.left < hurdle.left + hurdle.width  && player.left + player.width  > hurdle.left &&
-// // 		player.top < hurdle.top + hurdle.height && player.top + player.height > hurdle.top) {
-// //     console.log('collision');
-// //   }

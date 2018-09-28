@@ -1,5 +1,11 @@
 /* Background from https://codepen.io/P1N2O/pen/pyBNzX?editors=1100 */
-
+img {
+  max-width: 100%;
+  height: 115%;
+}
+audio {
+  display:none;
+}
 body {
 	width: 100wh;
 	height: 90vh;
@@ -8,7 +14,12 @@ body {
 	background-size: 400% 400%;
 	animation: Gradient 15s ease infinite;
 }
-
+.container {
+  position: relative;
+}
+.init {
+  transform: translate(-50%, -50%);
+}
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -20,26 +31,29 @@ body {
 		background-position: 0% 50%
 	}
 }
-
-.game-box {
+.hide {
+  opacity:0;
+}
+.container {
   height: 450px;
   width: 75%;
-  border: 2px solid black;
+  border-bottom: 15px solid #a74641;
   position: relative;
   margin: 80px auto;
   left: 0;
   background-image: url(https://orig00.deviantart.net/2ba3/f/2008/222/7/2/faded_olympic_logo_by_conradchaos.png);
   background-size: cover;
 }
+.init, .game-box {
+  text-align: center;
+}
 .user {
   height: 75px;
   width: 40px;
-  background-color: black;
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   left: 80px;
-  transition-duration: 1s;
-  background-image: image(https://cdn.pixabay.com/photo/2017/01/31/20/58/begin-2027218__340.png);
+  transition-duration: .75s;
 }
 .hurdle {
   height: 150px;
@@ -47,46 +61,51 @@ body {
   bottom: 0;
   position: absolute;
   background-color: blue;
-  right: 0%;
+  right: 0px;
   animation: move 5s linear;
 }
 
 #one{
   animation-delay: 2s;
+  height: 130px;
+  width:40px;
 }
 #two{
-  animation-delay: 5s;
+  animation-delay: 4.5s;
+  height: 180px;
 }
 #three{
-  animation-delay: 8s;
+  animation-delay: 6s;
+  height: 140px;
 }
 #four{
-animation-delay: 10s;
-
+  animation-delay: 8s;
 }
 #five{
-animation-delay: 12s;
-
+  height: 180px;
+  animation-delay: 10s;
 }
 #six{
-animation-delay: 16s;
-
+  animation-delay: 13s;
 }
 #seven{
-animation-delay: 20s;
-
+  animation-delay: 14.5s;
 }
 #eight{
-animation-delay: 24s;
-
+  height: 140px;
+  animation-delay: 16s;
 }
 #nine{
-animation-delay: 30s;
-
+  animation-delay: 18s;
 }
 #ten{
-animation-delay: 34s;
-
+  animation-delay: 19.5s;
+}
+#winner {
+  animation-delay: 22s;
+  height: 400px;
+  width:20px;
+  background-color: white;
 }
 
 @keyframes move {

@@ -94,9 +94,9 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Gravity | H | 5hrs | 3hrs | 3hrs |
 | Collision Detection | H | 5hrs|  |  |
-| Distance & Height of Hurdles | H | 3hrs|  |  |
+| Distance & Height of Hurdles | H | 3hrs| 2hrs | 2hrs |
 | Moving Hurdles towards users | M | 3hrs| 1.5 | 1.5 |
-| Key up and down | M | 2hrs|  | |
+| Key up and down | M | 2hrs| 1.5hrs | 1.5hrs |
 | Stopping game when user touches hurdles| L | 2hrs|  |  |
 | Restarting game| L | 2hrs|  |  |
 | HTML & CSS| L | 1.5hrs|  |  |
