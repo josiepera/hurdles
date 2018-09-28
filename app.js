@@ -35,45 +35,54 @@ function myFunction() {
 
 
 function isCollapsed(player1, hurdle){
+let playerRight = window.getComputedStyle(player1, null).getPropertyValue("right");
+let playerTop = window.getComputedStyle(player1, null).getPropertyValue("top");
+let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
 
-  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-  console.log('person' + playerLeft)
+let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
 
-  let hurdleLeft = window.getComputedStyle(hurdle, null).getPropertyValue("left");
-console.log('hurdle' + hurdleLeft)
+let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
 
+let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
+let hurdleTop = window.getComputedStyle(hurdle, null).getPropertyValue("top");
 
+let hurdleLeft = window.getComputedStyle(hurdle, null).getPropertyValue("left");
+
+let hurdleHeight = window.getComputedStyle(hurdle, null).getPropertyValue("height");
+
+let hurdleWidth = window.getComputedStyle(hurdle, null).getPropertyValue("width");
+
+let hurdleBottom = window.getComputedStyle(hurdle, null).getPropertyValue("bottom");
+let hurdleRight = window.getComputedStyle(hurdle, null).getPropertyValue("right");
+
+playerTop = parseInt(playerBottom.split('px')[0])
+playerBottom = parseInt(playerBottom.split('px')[0])
 playerLeft = parseInt(playerLeft.split('px')[0])
+playerHeight = parseInt(playerHeight.split('px')[0])
+playerWidth = parseInt(playerWidth.split('px')[0])
+playerRight = parseInt(playerRight.split('px')[0])
+
+hurdleTop = parseInt(hurdleTop.split('px')[0])
 hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+hurdleBottom = parseInt(hurdleBottom.split('px')[0])
+hurdleRight = parseInt(hurdleRight.split('px')[0])
 
-if (hurdleLeft <= playerLeft + 60){
-  alert('you lose')
-}
- // if (object_1.left < object_2.left + object_2.width  && object_1.left + object_1.width  > object_2.left &&
- //   object_1.top < object_2.top + object_2.height && object_1.top + object_1.height > object_2.top) {
- //   alert("collide");
- // }
 
- // else{
- //   rect.classList.remove("collide");
- // }
+if (hurdleTop <=playerTop + playerHeight && hurdleTop + hurdleHeight > playerTop &&
+   hurdleLeft < playerLeft + playerWidth && hurdleLeft + hurdleWidth > playerLeft) {
+ alert('hit')
+// if (hurdleTop <= playerBottom + playerWidth &&
+//    hurdleHeight > playerBottom &&
+//    hurdleLeft <= playerLeft + playerWidth &&
+//    hurdleLeft + hurdleWidth > playerLeft) {
+//  alert('hit')
+
 }
+}
+
 setInterval(function(){
-  isCollapsed(player1, hurdle)
+isCollapsed(player1, hurdle)
 }, 300)
-
-
-// let sI = setInterval( () => {
-//       console.log('inside setInterval')
-//
-//       right = parseInt(right.split('px')[0])
-//       if(right > 783) {
-//       console.log('this is right: ', right)
-//        document.removeEventListener('keydown', jump)
-//         document.player1.style.animationPlayState = 'paused';
-//        clearInterval(sI)
-//      }
-//     },50)
-
-// alert('crash')
