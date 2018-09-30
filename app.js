@@ -82,7 +82,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose', startGame())
 }
 }
 
