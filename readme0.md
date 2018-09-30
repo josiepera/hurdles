@@ -93,7 +93,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Gravity | H | 5hrs | 3hrs | 3hrs |
-| Collision Detection | H | 5hrs|  |  |
+| Collision Detection | H | 5hrs| 8hrs | 8hrs |
 | Distance & Height of Hurdles | H | 3hrs| 2hrs | 2hrs |
 | Moving Hurdles towards users | M | 3hrs| 1.5 | 1.5 |
 | Key up and down | M | 2hrs| 1.5hrs | 1.5hrs |

@@ -63,12 +63,16 @@ button {
   transition-duration: .75s;
   /* border: 2px solid black; */
 }
+.hurdle {
+  visibility: hidden;
+}
 .main {
+  visibility: visible;
   height: 150px;
   width:20px;
   bottom: 0;
   position: absolute;
-  background-color: blue;
+  /* background-color: blue; */
   right: 0px;
   animation: move 5s linear;
 }
@@ -77,44 +81,67 @@ button {
   animation-delay: 2s;
   height: 130px;
   /* width:40px; */
-  transition-duration: 3s;
+}
+#one img, #two img, #three img,
+#four img, #five img, #six img,
+#seven img, #eight img, #nine img,
+#ten img{
+  max-width: 140px;
+  max-height: 100%;
 }
 #two{
   animation-delay: 4.5s;
   /* height: 180px; */
 }
 #three{
-  animation-delay: 6s;
+  animation-delay: 7s;
   height: 140px;
 }
 #four{
-  animation-delay: 8s;
+  animation-delay: 10s;
 }
 #five{
   /* height: 180px; */
-  animation-delay: 10s;
+  animation-delay: 13s;
 }
 #six{
-  animation-delay: 12s;
+  animation-delay: 16s;
 }
 #seven{
-  animation-delay: 14.5s;
+  animation-delay: 18.5s;
 }
 #eight{
   /* height: 140px; */
-  animation-delay: 16s;
+  animation-delay: 20.5s;
 }
 #nine{
-  animation-delay: 18s;
+  animation-delay: 23s;
 }
 #ten{
-  animation-delay: 19.5s;
+  animation-delay: 25.5s;
 }
 #winner {
-  animation-delay: 22s;
+  animation-delay: 30s;
   height: 400px;
   width:20px;
-  background-color: white;
+  /* background-color: white; */
+}
+#winner img {
+  height: 400px;
+  width:100px;
+}
+.winner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem;
+  /* background-color: #111; */
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 250ms ease;
 }
 
 @keyframes move {

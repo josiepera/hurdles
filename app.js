@@ -11,7 +11,13 @@ let nine = document.querySelector('#nine')
 let ten = document.querySelector('#ten')
 let winner = document.querySelector('#winner')
 
+
+
+
 function startGame() {
+   document.querySelector('p').style.visibility = 'hidden'
+   document.querySelector('img').style.maxHeight = "110%"
+   document.querySelector('img').style.width = "150px"
    hurdle.classList.toggle("main");
    two.classList.toggle("main");
    three.classList.toggle("main");
@@ -24,25 +30,10 @@ function startGame() {
    ten.classList.toggle("main");
    winner.classList.toggle("main");
 }
-// function startGame(){
-//   // hurdles.style.animation = "move 5s linear";
-//   let two = document.querySelector('#two').style.animation = "move 5s linear"
-//   let three = document.querySelector('#three').style.animation = "move 5s linear"
-//   let four = document.querySelector('#four').style.animation = "move 5s linear"
-//   let five = document.querySelector('#five').style.animation = "move 5s linear"
-//   let six = document.querySelector('#ix').style.animation = "move 5s linear"
-//   let seven = document.querySelector('#seven').style.animation = "move 5s linear"
-//   let eight = document.querySelector('#eight').style.animation = "move 5s linear"
-//   let nine = document.querySelector('#nine').style.animation = "move 5s linear"
-//   let ten = document.querySelector('#ten').style.animation = "move 5s linear"
-//
-// }
-
-
 
 document.addEventListener('keydown', function jump(event){
   if(event.keyCode == 38) {
-    player1.style.bottom = '250px';
+    player1.style.bottom = '340px';
 setTimeout(down, 800);
 }
 })
@@ -80,9 +71,9 @@ hurdleLeft = parseInt(hurdleLeft.split('px')[0])
 hurdleHeight = parseInt(hurdleHeight.split('px')[0])
 hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+if (hurdleLeft <= (playerLeft) &&
       playerBottom < hurdleHeight) {
-    alert('You Lose', startGame())
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -115,7 +106,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom <= hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -143,7 +134,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -171,7 +162,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -200,7 +191,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -228,7 +219,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -256,7 +247,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -285,7 +276,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -313,7 +304,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -342,7 +333,7 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('hit')
+    alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -370,10 +361,15 @@ hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
 if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    alert('You Win!!!!!!')
+    winnerPage();
 }
 }
 
 setInterval(function(){
 won(player1, winner)
 }, 300)
+
+function winnerPage (){
+  document.querySelectorAll('game-box').style.visibility = 'hidden'
+  document.querySelectorAll('#you-won').textContent = "WINNER"
+}
