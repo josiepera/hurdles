@@ -1,7 +1,7 @@
 /* Background from https://codepen.io/P1N2O/pen/pyBNzX?editors=1100 */
-* {
+/* * {
   border: 2px solid black;
-}
+} */
 
 img {
   max-width: 100%;
@@ -17,6 +17,9 @@ body {
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
 	animation: Gradient 15s ease infinite;
+}
+button {
+  display: inline-block;
 }
 .container {
   position: relative;
@@ -58,7 +61,7 @@ body {
   bottom: 0px;
   left: 80px;
   transition-duration: .75s;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 .hurdle {
   height: 150px;
@@ -67,7 +70,7 @@ body {
   position: absolute;
   background-color: blue;
   right: 0px;
-  animation: move 5s linear;
+  /* animation: move 5s linear; */
 }
 
 #one{
@@ -78,7 +81,7 @@ body {
 }
 #two{
   animation-delay: 4.5s;
-  height: 180px;
+  /* height: 180px; */
 }
 #three{
   animation-delay: 6s;
@@ -88,17 +91,17 @@ body {
   animation-delay: 8s;
 }
 #five{
-  height: 180px;
+  /* height: 180px; */
   animation-delay: 10s;
 }
 #six{
-  animation-delay: 13s;
+  animation-delay: 12s;
 }
 #seven{
   animation-delay: 14.5s;
 }
 #eight{
-  height: 140px;
+  /* height: 140px; */
   animation-delay: 16s;
 }
 #nine{
