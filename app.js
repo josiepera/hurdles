@@ -1,30 +1,43 @@
-
 let hurdle = document.querySelector('.hurdle')
 let player1 = document.querySelector('.user')
-let hurdleOne = document.querySelector('#one')
 let two = document.querySelector('#two')
 let three = document.querySelector('#three')
 let four = document.querySelector('#four')
 let five = document.querySelector('#five')
-let six = document.querySelector('#ix')
+let six = document.querySelector('#six')
 let seven = document.querySelector('#seven')
 let eight = document.querySelector('#eight')
 let nine = document.querySelector('#nine')
 let ten = document.querySelector('#ten')
+let winner = document.querySelector('#winner')
 
-
-function startGame(){
-  hurdle.style.animation = "move 5s linear";
-  let two = document.querySelector('#two').style.animation = "move 5s linear"
-  let three = document.querySelector('#three').style.animation = "move 5s linear"
-  let four = document.querySelector('#four').style.animation = "move 5s linear"
-  let five = document.querySelector('#five').style.animation = "move 5s linear"
-  let six = document.querySelector('#ix').style.animation = "move 5s linear"
-  let seven = document.querySelector('#seven').style.animation = "move 5s linear"
-  let eight = document.querySelector('#eight').style.animation = "move 5s linear"
-  let nine = document.querySelector('#nine').style.animation = "move 5s linear"
-  let ten = document.querySelector('#ten').style.animation = "move 5s linear"
+function startGame() {
+   hurdle.classList.toggle("main");
+   two.classList.toggle("main");
+   three.classList.toggle("main");
+   four.classList.toggle("main");
+   five.classList.toggle("main");
+   six.classList.toggle("main");
+   seven.classList.toggle("main");
+   eight.classList.toggle("main");
+   nine.classList.toggle("main");
+   ten.classList.toggle("main");
+   winner.classList.toggle("main");
 }
+// function startGame(){
+//   // hurdles.style.animation = "move 5s linear";
+//   let two = document.querySelector('#two').style.animation = "move 5s linear"
+//   let three = document.querySelector('#three').style.animation = "move 5s linear"
+//   let four = document.querySelector('#four').style.animation = "move 5s linear"
+//   let five = document.querySelector('#five').style.animation = "move 5s linear"
+//   let six = document.querySelector('#ix').style.animation = "move 5s linear"
+//   let seven = document.querySelector('#seven').style.animation = "move 5s linear"
+//   let eight = document.querySelector('#eight').style.animation = "move 5s linear"
+//   let nine = document.querySelector('#nine').style.animation = "move 5s linear"
+//   let ten = document.querySelector('#ten').style.animation = "move 5s linear"
+//
+// }
+
 
 
 document.addEventListener('keydown', function jump(event){
@@ -335,4 +348,32 @@ if (hurdleLeft <= (playerLeft + 40) &&
 
 setInterval(function(){
 tenCollision(player1, ten)
+}, 300)
+
+function won(player1, winner){
+let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+
+let hurdleLeft = window.getComputedStyle(winner, null).getPropertyValue("left");
+let hurdleHeight = window.getComputedStyle(winner, null).getPropertyValue("height");
+let hurdleWidth = window.getComputedStyle(winner, null).getPropertyValue("width");
+
+playerBottom = parseInt(playerBottom.split('px')[0])
+playerLeft = parseInt(playerLeft.split('px')[0])
+playerWidth = parseInt(playerWidth.split('px')[0])
+
+hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+
+if (hurdleLeft <= (playerLeft + 40) &&
+      playerBottom < hurdleHeight) {
+    alert('You Win!!!!!!')
+}
+}
+
+setInterval(function(){
+won(player1, winner)
 }, 300)
