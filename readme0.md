@@ -25,6 +25,8 @@ notes
 
 The hurdles game is a game where the user's character is running on a track and along the way, has to jump over hurdles in order to get to the finish line.  The second the user touches the hurdle, they lose the game and have the option to either restart the game or go back to the landing page (exit the game).  The character itself will be a div and will only move up and down.  the hurdles will come at the character at a steady pace but at different heights. Once the user reaches the finish line, then they win the game.  
 
+ Screencast - https://res.cloudinary.com/jperalta/video/upload/v1538406607/Screen_Recording_Josie_Peralta.mov
+ 
 ## Wireframes
 
 (https://res.cloudinary.com/jperalta/image/upload/v1537903107/IMG_0950.jpg)
