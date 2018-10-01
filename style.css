@@ -8,11 +8,13 @@ h1 {
   font-family: 'Chakra Petch', sans-serif;
   font-weight: bold;
   font-size: 65px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 p{
   font-family: 'Chakra Petch', sans-serif;
   margin: 50px;
   font-size: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 button{
 
