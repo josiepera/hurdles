@@ -110,7 +110,8 @@ Helper functions should be generic enough that they can be reused in other appli
 | Capitalize | This will capitalize the first letter in a string of text |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project.
+ Recieved a lot of help from W3 Schools and Stack Overflow.  
+ Pictures and gifs come from google images.
 
 ## Code Snippet
 
