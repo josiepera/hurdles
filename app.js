@@ -15,9 +15,11 @@ let winner = document.querySelector('#winner')
 
 
 function startGame() {
-   document.querySelector('p').style.visibility = 'hidden'
-   document.querySelector('img').style.maxHeight = "110%"
-   document.querySelector('img').style.width = "150px"
+   document.querySelector('p').style.visibility = 'hidden';
+   document.querySelector('h1').style.visibility = 'hidden';
+   document.querySelector('img').style.maxHeight = "110%";
+   document.querySelector('img').style.width = "150px";
+   document.querySelector('button').textContent = 'Restart';
    hurdle.classList.toggle("main");
    two.classList.toggle("main");
    three.classList.toggle("main");
@@ -32,10 +34,10 @@ function startGame() {
 }
 
 document.addEventListener('keydown', function jump(event){
-  if(event.keyCode == 38) {
-    player1.style.bottom = '340px';
-setTimeout(down, 800);
-}
+    if(event.keyCode == 38) {
+      player1.style.bottom = '340px';
+      setTimeout(down, 800);
+  }
 })
 function down () {
   player1.style.bottom = '0px'
@@ -51,29 +53,29 @@ function myFunction() {
 
 function isCollapsed(player1, hurdle){
 
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(hurdle, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(hurdle, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(hurdle, null).getPropertyValue("width");
-let hurdleBottom = window.getComputedStyle(hurdle, null).getPropertyValue("bottom");
+  let hurdleLeft = window.getComputedStyle(hurdle, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(hurdle, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(hurdle, null).getPropertyValue("width");
+  let hurdleBottom = window.getComputedStyle(hurdle, null).getPropertyValue("bottom");
 
 
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft) &&
-      playerBottom < hurdleHeight) {
-    alert('You Lose, Back to Start Page', startGame())
+  if (hurdleLeft <= (playerLeft) &&
+        playerBottom < hurdleHeight) {
+          alert('You Lose, Back to Start Page', startGame())
 }
 }
 
@@ -86,53 +88,53 @@ isCollapsed(player1, hurdle)
 
 function twoCollision(player1, two){
 
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(two, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(two, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(two, null).getPropertyValue("width");
-let hurdleBottom = window.getComputedStyle(two, null).getPropertyValue("bottom");
+  let hurdleLeft = window.getComputedStyle(two, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(two, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(two, null).getPropertyValue("width");
+  let hurdleBottom = window.getComputedStyle(two, null).getPropertyValue("bottom");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom <= hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
 }
 
-setInterval(function(){
-twoCollision(player1, two)
+  setInterval(function(){
+    twoCollision(player1, two)
 }, 300)
 
 function threeCollision(player1, three){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(three, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(three, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(three, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(three, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(three, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(three, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -143,24 +145,24 @@ threeCollision(player1, three)
 }, 300)
 
 function fourCollision(player1, four){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(four, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(four, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(four, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(four, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(four, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(four, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -172,24 +174,24 @@ fourCollision(player1, four)
 
 
 function fiveCollision(player1, five){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(five, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(five, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(five, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(five, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(five, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(five, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -200,24 +202,24 @@ fiveCollision(player1, five)
 }, 300)
 
 function sixCollision(player1, six){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(six, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(six, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(six, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(six, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(six, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(six, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -228,24 +230,24 @@ sixCollision(player1, six)
 }, 300)
 
 function sevenCollision(player1, seven){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(seven, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(seven, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(seven, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(seven, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(seven, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(seven, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -257,24 +259,24 @@ sevenCollision(player1, seven)
 
 
 function eightCollision(player1, eight){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(eight, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(eight, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(eight, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(eight, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(eight, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(eight, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -285,24 +287,24 @@ eightCollision(player1, eight)
 }, 300)
 
 function nineCollision(player1, nine){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(nine, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(nine, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(nine, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(nine, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(nine, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(nine, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -314,24 +316,24 @@ nineCollision(player1, nine)
 
 
 function tenCollision(player1, ten){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(ten, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(ten, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(ten, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(ten, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(ten, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(ten, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
     alert('You Lose, Back to Start Page', startGame())
 }
@@ -342,34 +344,29 @@ tenCollision(player1, ten)
 }, 300)
 
 function won(player1, winner){
-let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
-let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
-let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
-let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let playerHeight = window.getComputedStyle(player1, null).getPropertyValue("height");
+  let playerWidth = window.getComputedStyle(player1, null).getPropertyValue("width");
 
-let hurdleLeft = window.getComputedStyle(winner, null).getPropertyValue("left");
-let hurdleHeight = window.getComputedStyle(winner, null).getPropertyValue("height");
-let hurdleWidth = window.getComputedStyle(winner, null).getPropertyValue("width");
+  let hurdleLeft = window.getComputedStyle(winner, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(winner, null).getPropertyValue("height");
+  let hurdleWidth = window.getComputedStyle(winner, null).getPropertyValue("width");
 
-playerBottom = parseInt(playerBottom.split('px')[0])
-playerLeft = parseInt(playerLeft.split('px')[0])
-playerWidth = parseInt(playerWidth.split('px')[0])
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  playerWidth = parseInt(playerWidth.split('px')[0])
 
-hurdleLeft = parseInt(hurdleLeft.split('px')[0])
-hurdleHeight = parseInt(hurdleHeight.split('px')[0])
-hurdleWidth = parseInt(hurdleWidth.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+  hurdleWidth = parseInt(hurdleWidth.split('px')[0])
 
-if (hurdleLeft <= (playerLeft + 40) &&
+  if (hurdleLeft <= (playerLeft + 40) &&
       playerBottom < hurdleHeight) {
-    winnerPage();
+    alert('YOU WIN')
 }
 }
 
 setInterval(function(){
 won(player1, winner)
 }, 300)
-
-function winnerPage (){
-  document.querySelectorAll('game-box').style.visibility = 'hidden'
-  document.querySelectorAll('#you-won').textContent = "WINNER"
-}

@@ -2,7 +2,21 @@
 /* * {
   border: 2px solid black;
 } */
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
 
+h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: bold;
+  font-size: 65px;
+}
+p{
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 50px;
+  font-size: 20px;
+}
+button{
+
+}
 img {
   max-width: 100%;
   height: 115%;
@@ -24,9 +38,9 @@ button {
 .container {
   position: relative;
 }
-.init {
+/* .init {
   transform: translate(-50%, -50%);
-}
+} */
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -48,7 +62,8 @@ button {
   position: relative;
   margin: 80px auto;
   left: 0;
-  background-image: url(https://orig00.deviantart.net/2ba3/f/2008/222/7/2/faded_olympic_logo_by_conradchaos.png);
+  background-image: url(http://4.bp.blogspot.com/-DwxB2x0wcjQ/UeKVA-_xxaI/AAAAAAAAOEY/Py3JgmvNNeQ/s1600/sprite_effects_fire_sprite_fx_0037.gif);
+  /* background-image: url(https://orig00.deviantart.net/2ba3/f/2008/222/7/2/faded_olympic_logo_by_conradchaos.png); */
   background-size: cover;
 }
 .init, .game-box {
@@ -63,7 +78,7 @@ button {
   transition-duration: .75s;
   /* border: 2px solid black; */
 }
-.hurdle {
+.hurdle{
   visibility: hidden;
 }
 .main {
@@ -74,7 +89,8 @@ button {
   position: absolute;
   /* background-color: blue; */
   right: 0px;
-  animation: move 5s linear;
+  opacity: 0;
+  animation: move 4500ms linear 1;
 }
 
 #one{
@@ -86,73 +102,71 @@ button {
 #four img, #five img, #six img,
 #seven img, #eight img, #nine img,
 #ten img{
-  max-width: 140px;
+  max-width: 130px;
   max-height: 100%;
 }
+
 #two{
-  animation-delay: 4.5s;
+  animation-delay: 4s;
   /* height: 180px; */
 }
 #three{
-  animation-delay: 7s;
+  animation-delay: 6s;
   height: 140px;
 }
 #four{
-  animation-delay: 10s;
+  animation-delay: 8s;
 }
 #five{
   /* height: 180px; */
-  animation-delay: 13s;
+  animation-delay: 10.5s;
 }
 #six{
-  animation-delay: 16s;
+  animation-delay: 12.5s;
 }
 #seven{
-  animation-delay: 18.5s;
+  animation-delay: 16s;
 }
 #eight{
   /* height: 140px; */
-  animation-delay: 20.5s;
+  animation-delay: 17.5s;
 }
 #nine{
-  animation-delay: 23s;
+  animation-delay: 19s;
 }
 #ten{
-  animation-delay: 25.5s;
+  animation-delay: 20.5s;
 }
 #winner {
-  animation-delay: 30s;
+  animation-delay: 23s;
   height: 400px;
-  width:20px;
+  width:80px;
   /* background-color: white; */
 }
 #winner img {
   height: 400px;
-  width:100px;
-}
-.winner{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 4rem;
-  /* background-color: #111; */
-  text-align: center;
-  z-index: 10;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 250ms ease;
+  width:80px;
 }
 
 @keyframes move {
   0% {
       left: 100%;
+      opacity: 0;
     }
+  25% {
+    left: 75%;
+    opacity:1;
+  }
 
   50% {
     left: 50%;
+    opacity: 1;
   }
-
+  75% {
+    left: 25%;
+    opacity: 1;
+  }
   100% {
     left: 0%;
+    opacity: 1;
   }
