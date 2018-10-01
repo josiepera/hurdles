@@ -100,7 +100,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Stopping game when user touches hurdles| L | 2hrs| 4hrs | 4hrs |
 | Restarting game| L | 2hrs| 3hrs | 3hrs |
 | HTML & CSS| L | 1.5hrs| 2hrs | 2hrs |
-| Total | 23.5hrs |   |   |   |
+| Total |  | 23.5hrs  | 25hrs  | 25hrs  |
 
 ## Helper Functions
 Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
@@ -117,9 +117,29 @@ Helper functions should be generic enough that they can be reused in other appli
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function isCollapsed(player1, hurdle){
+
+  let playerBottom = window.getComputedStyle(player1, null).getPropertyValue("bottom");
+  let playerLeft = window.getComputedStyle(player1, null).getPropertyValue("left");
+  let hurdleLeft = window.getComputedStyle(hurdle, null).getPropertyValue("left");
+  let hurdleHeight = window.getComputedStyle(hurdle, null).getPropertyValue("height");
+
+  playerBottom = parseInt(playerBottom.split('px')[0])
+  playerLeft = parseInt(playerLeft.split('px')[0])
+  hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+  hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+
+  if (hurdleLeft <= (playerLeft) &&
+        playerBottom < hurdleHeight) {
+          alert('You Lose, Back to Start Page', startGame())
 }
+}
+
+
+
+setInterval(function(){
+isCollapsed(player1, hurdle)
+}, 300)
 ```
 
 ## Change Log

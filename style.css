@@ -1,7 +1,3 @@
-/* Background from https://codepen.io/P1N2O/pen/pyBNzX?editors=1100 */
-/* * {
-  border: 2px solid black;
-} */
 @import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
 
 h1 {
@@ -40,9 +36,7 @@ button {
 .container {
   position: relative;
 }
-/* .init {
-  transform: translate(-50%, -50%);
-} */
+
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -65,7 +59,6 @@ button {
   margin: 80px auto;
   left: 0;
   background-image: url(http://4.bp.blogspot.com/-DwxB2x0wcjQ/UeKVA-_xxaI/AAAAAAAAOEY/Py3JgmvNNeQ/s1600/sprite_effects_fire_sprite_fx_0037.gif);
-  /* background-image: url(https://orig00.deviantart.net/2ba3/f/2008/222/7/2/faded_olympic_logo_by_conradchaos.png); */
   background-size: cover;
 }
 .init, .game-box {
@@ -78,7 +71,6 @@ button {
   bottom: 0px;
   left: 80px;
   transition-duration: .75s;
-  /* border: 2px solid black; */
 }
 .hurdle{
   visibility: hidden;
@@ -89,7 +81,6 @@ button {
   width:20px;
   bottom: 0;
   position: absolute;
-  /* background-color: blue; */
   right: 0px;
   opacity: 0;
   animation: move 4500ms linear 1;
@@ -98,7 +89,6 @@ button {
 #one{
   animation-delay: 2s;
   height: 130px;
-  /* width:40px; */
 }
 #one img, #two img, #three img,
 #four img, #five img, #six img,
@@ -110,7 +100,6 @@ button {
 
 #two{
   animation-delay: 4s;
-  /* height: 180px; */
 }
 #three{
   animation-delay: 6s;
@@ -120,7 +109,6 @@ button {
   animation-delay: 8s;
 }
 #five{
-  /* height: 180px; */
   animation-delay: 10.5s;
 }
 #six{
@@ -130,7 +118,6 @@ button {
   animation-delay: 16s;
 }
 #eight{
-  /* height: 140px; */
   animation-delay: 17.5s;
 }
 #nine{
@@ -143,7 +130,6 @@ button {
   animation-delay: 23s;
   height: 400px;
   width:80px;
-  /* background-color: white; */
 }
 #winner img {
   height: 400px;
