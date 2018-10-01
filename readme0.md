@@ -114,8 +114,6 @@ Helper functions should be generic enough that they can be reused in other appli
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
 ```
 function isCollapsed(player1, hurdle){
 
@@ -143,11 +141,28 @@ isCollapsed(player1, hurdle)
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+    Since the collision detection was inconsistent with each hurdle, I made the
+    images of each obstacle larger and somewhat within range of where the program would
+    detect the collision.  Below is the code in css where I changed the size.  
+    This change was so the user would avoid as much of the collision detection as possibilities
+
+    #one img, #two img, #three img,
+    #four img, #five img, #six img,
+    #seven img, #eight img, #nine img,
+    #ten img{
+      max-width: 130px;
+      max-height: 100%;
+    }
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+ The main issue I had was using querySelectorAll to pull all of the hurdles instead of the first one.
+ In order to resolve this, I had to hard code and copy all of the hurdles and create a function for each hurdle.
+ Another issue was when I had to determine where both the hurdle and the user collided side by side.
+ We used setInterval to find this but the couldn't find the left of the hurdle.  Fortunately, the instructors pointed out that the px had to be taken out in order to compare the left of the hurdle and the user.  Below is the code we used to solve this issue.  
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+```
+playerBottom = parseInt(playerBottom.split('px')[0])
+playerLeft = parseInt(playerLeft.split('px')[0])
+hurdleLeft = parseInt(hurdleLeft.split('px')[0])
+hurdleHeight = parseInt(hurdleHeight.split('px')[0])
+```
